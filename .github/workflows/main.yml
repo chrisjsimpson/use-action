@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Rebuild Digital Ocean Droplet
     steps:
+    - uses: actions/checkout@v2
+      with:
+          fetch-depth: 0
     - name: Debug secrets
       run: |
         echo ${{ secrets.DIGITAL_OCEAN_ACCESS_TOKEN }}
